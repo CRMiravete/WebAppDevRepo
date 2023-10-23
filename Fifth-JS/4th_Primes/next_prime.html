@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+    <script type="text/javascript">
+        
+        function checkPrime(){
+            var id = document.getElementById("num");
+            var number = parseInt(document.getElementById("num").value);
+            var maxNum = parseInt(1299827);
+            if(number < maxNum && !isNaN(number)){
+                for(var i = number + 1;i < maxNum; i++){
+                    if(isPrime(i)){
+                        id.value = i; // Set the input field with the next prime number
+                        return; // Return the prime number and exit the loop
+                    }
+                }
+            } else {
+                window.alert("Please Enter Number Below 1299827 or Enter A Valid Integer");
+                id.value = "";
+            }
+        }
+        /*
+        function isPrime(num){
+            for(var i = 2; i < num; i++){
+                if(num % i === 0){
+                    return false;
+                }
+            }
+        }
+        */
+
+        function isPrime(num){
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+            
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            for (var i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+            
+            return true;
+        }
+
+    </script>
+
+</head>
+<body>
+    <form id="form" runat="server">
+        <div>
+            <input type="text" id="num" />
+            <button id="btn" onclick="checkPrime();return false"></button>
+            Click to get the next prime number
+        </div>
+    </form>
+    
+</body>
+</html>

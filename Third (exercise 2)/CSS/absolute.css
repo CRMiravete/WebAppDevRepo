@@ -1,0 +1,21 @@
+div{
+    width: 220px;
+    height: 220px;
+}
+.top_square{
+    background-color: rgb(255, 0, 238);
+    top: 50px;
+    position: absolute;
+    padding: 20px;
+}
+.middle_square{
+    background-color: blue;
+    position: relative;
+    margin-left: 100px;
+    font-family:'Courier New', Courier, monospace ;
+}
+.bottom_square{
+    background-color: aquamarine;
+    position: relative;
+    margin-left: 120px;
+}

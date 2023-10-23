@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+    <img src="../images/StarLion.png" alt="lion brewery" />
+    <h1>Welcome to my landing page</h1>
+    <% if(locals.name) {%>
+        <h2> Hi <%= name %> 
+        </h2>
+        <% } %>
+
+        <% posts.forEach ((post) => {%>
+            <div>
+                <hr />
+                <h1>
+                    <%= post.title %>
+                </h1>
+                <p>
+                    <%= post.content %>
+                </p>
+            </div>
+        <% });%>
+        
+<%- include("partials/footer"); -%>

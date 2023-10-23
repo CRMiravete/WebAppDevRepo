@@ -1,0 +1,52 @@
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: maroon;
+}
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(98, 25, 25);
+}
+table{
+  background-color: rgb(45, 20, 6);
+  color: rgb(249, 254, 116);
+}
+.table1 tbody{
+  background-color: azure;
+  color: black;
+}
+div {
+    margin: 30px;
+    border: 3px solid #6adf70;
+  }
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+  color: navy;
+}
+h1{
+  color: rgb(150, 3, 3);
+}
+strong{
+  color: rgb(172, 47, 45);
+}
+.destination h1{
+  border: antiquewhite;
+}
+.header+nav{
+  font-style: normal;
+  font-size: medium;
+  color: cornflowerblue;
+  background-color: rgb(255, 255, 255);
+}
+ol[start="1"]{
+  background-color: aquamarine;
+}
+.h1{
+  color: antiquewhite;
+  padding: 20px;
+  border: blue dashed 10px;
+  margin: 20px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  /*font-family: 'Karla', sans-serif;;*/
+}

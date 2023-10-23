@@ -1,0 +1,23 @@
+{
+  "name": "node_test",
+  "version": "1.0.0",
+  "description": "Basic test of how NPM works",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "\"\"\u001b[Dnode\"",
+    "\"\"\u001b[Dnpm\"",
+    "\"\"\u001b[Dtest\""
+  ],
+  "author": "Cristian",
+  "license": "ISC",
+  "dependencies": {
+    "popular-movie-quotes": "^1.2.4",
+    "star-wars-quotes": "^1.0.2",
+    "superheroes": "^3.0.0",
+    "supervillains": "^3.1.0"
+  },
+  "devDependencies": {}
+}

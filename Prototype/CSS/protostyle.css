@@ -1,0 +1,85 @@
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 20px,10%;
+    background-color:darkslategrey;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    z-index: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.h1{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body{
+    background-color: azure;
+}
+
+.logo{
+    border-radius: 40px;
+    padding: 22px;
+    padding-left: 20px;
+}
+
+.navigation a{
+    font-size: 20px;
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 68px;
+    padding-left: 40px;
+    transition: 4s;
+}
+
+.welcome{
+    padding-top: 60px;
+}
+
+.mainBanner{
+    padding-top: 100px;
+    padding-left: 40px;
+    background-color: rgb(0, 255, 94);
+    align-items: center;
+}
+
+.mainBanner h3{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: medium;
+}
+
+.numberGoal{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 60px;
+    color:rgb(21, 95, 21);
+    
+}
+
+.secondBanner{
+    padding-left: 130px;
+    padding-bottom: 40px;
+    font-size: 60px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin-right: 120px;
+    color: aliceblue;
+    align-items: center;
+    position: relative;
+}
+
+.objective h2{
+    align-self: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+}
+
+.objective{
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 32px;
+}

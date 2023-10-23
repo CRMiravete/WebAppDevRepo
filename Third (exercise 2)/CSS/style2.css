@@ -1,0 +1,26 @@
+div{
+    width: 200px;
+    height: 200px;
+    display: inline-block; /*This is what allows the horizontal DISPLAY of the blocks*/
+}
+.top_square{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+.middle_square{
+    background-color: blue;
+    color: white;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+.bottom_square{
+    background-color: yellow;
+    color: black;
+    position:relative; /*Fixed in place, the pop - up adds*/
+    top: 50px;
+    left: 50px;
+}

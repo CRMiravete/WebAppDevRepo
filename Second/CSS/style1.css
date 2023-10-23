@@ -1,0 +1,22 @@
+div{
+    width: 200px;
+    height: 200px;
+}
+.top_square{
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    border: rgb(0, 0, 0) solid 10px;
+    padding: 20px;
+}
+.middle_square{
+    background-color: yellow;
+    color: black;
+    border: black solid 20px;
+    margin-left: 260px;
+}
+.bottom_square{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: black solid 10px;
+    margin-left: 500px;
+}
