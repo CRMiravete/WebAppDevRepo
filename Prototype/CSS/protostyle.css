@@ -18,7 +18,7 @@
 }
 
 body{
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
 }
 
 .logo{
@@ -34,7 +34,19 @@ body{
     text-decoration: none;
     padding-right: 68px;
     padding-left: 40px;
-    transition: 4s;
+    transition: 5s;
+}
+
+.navigation a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0;
+    height:100%;
+    background: rgb(22, 37, 37);
+    z-index:-1;
+    transition: 3s;
 }
 
 .welcome{
@@ -44,19 +56,20 @@ body{
 .mainBanner{
     padding-top: 100px;
     padding-left: 40px;
-    background-color: rgb(0, 255, 94);
+    background-color: rgb(38, 106, 63);
     align-items: center;
 }
 
 .mainBanner h3{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: medium;
+    color: aliceblue;
 }
 
 .numberGoal{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 60px;
-    color:rgb(21, 95, 21);
+    color:rgb(138, 255, 187);
     
 }
 
@@ -69,6 +82,9 @@ body{
     color: aliceblue;
     align-items: center;
     position: relative;
+    padding-right: 68px;
+    padding-left: 40px;
+    transition: 5s;
 }
 
 .objective h2{
@@ -76,10 +92,61 @@ body{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 52px;
     font-weight: 800;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .objective{
     align-items: center;
     font-family: 'Barlow', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
+}
+
+.card img {
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image horizontally within the container */
+    border-radius:10px ;
+    margin-top: 8px;
+}
+
+
+.objective2{
+    background-color: rgb(56, 97, 97);
+    color:white;
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px;
+}
+.objective2 h2{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.challenges{
+    background-color: rgb(0, 0, 0);
+    color:white;
+    align-items: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px;
+}
+.challenges a{
+    color: rgb(166, 225, 166);
+}
+.challenges img{
+    width: 200px;
+    height: 130px;
+    float: right; /* Float the image to the right */
+    margin-left: 10px;
+    margin-bottom:100px;
+}
+
+.more{
+    background-color: aliceblue;
+    color: rgb(80, 179, 80);
 }
