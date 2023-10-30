@@ -4,7 +4,7 @@
     left:0;
     width:100%;
     padding: 20px,10%;
-    background-color:darkslategrey;
+    background-color:#213363;
     display:flex;
     justify-content:flex-start;
     align-items: center;
@@ -56,7 +56,7 @@ body{
 .mainBanner{
     padding-top: 100px;
     padding-left: 40px;
-    background-color: rgb(38, 106, 63);
+    background-color: #17594A;
     align-items: center;
 }
 
@@ -100,6 +100,7 @@ body{
     align-items: center;
     font-family: 'Barlow', sans-serif;
     font-size: 24px;
+    padding-left: 10px;
 }
 
 .card img {
@@ -111,7 +112,7 @@ body{
 
 
 .objective2{
-    background-color: rgb(56, 97, 97);
+    background-color: #8EAC50;
     color:white;
     align-items: center;
     font-family: 'Barlow', sans-serif;
