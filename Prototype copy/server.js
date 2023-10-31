@@ -7,6 +7,18 @@ app.use(express.static("public"));
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
+let username;
+let password;
+
+app.post("/login", (req, res) => {
+
+  username=req.body.username;
+  password=req.body.password;
+  res.render("login", {username});
+
+  
+  
+})
 app.get("/", (req, res) => {
     res.render("index");
   });
