@@ -1,6 +1,6 @@
 <%- include("partials/header") -%>
     <h1>Welcome to my F1 DB</h1>
-    <form action="/driver" method="get">
+    <form action="/driver" method="post">
         <h2>Driver information</h2>
         <input type="text" name="num" id="num" placeholder="Number" />
         <input type="text" name="code" id="code" placeholder="Code" />
@@ -21,6 +21,8 @@
             <% });%>
         </select>
 
+        <button id="toggleButton">Toggle View</button>
+
         <label for="team">Team: </label>
         <select name="team" id="team">
             <% teams.forEach((team) => {%>
@@ -32,4 +34,28 @@
         <p> <input type="submit" /> </p>
 
     </form>
+    <ul id="driverList">
+        <% drivers.forEach((driver) => {%>
+            <li>
+                <%= driver.forname %>
+                    <%= driver.surname %>
+            </li>
+        <% });%>
+    </ul>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const driverList = document.getElementById('driverList');
+        const teamList = document.getElementById('team');
+    
+        toggleButton.addEventListener('click', () => {
+            if (driverList.style.display === 'none') {
+                driverList.style.display = 'block';
+                teamList.style.display = 'none';
+            } else {
+                driverList.style.display = 'none';
+                teamList.style.display = 'block';
+            }
+        });
+    </script>
 <%- include("partials/footer") -%>

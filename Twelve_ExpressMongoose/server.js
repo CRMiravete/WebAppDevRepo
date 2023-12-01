@@ -13,14 +13,15 @@ app.set("view engine", "ejs");
 const user = process.env.DB_USER;
 const pass = process.env.DB_PASS;
 //                             the ${} must be declared after creating the .env file. MAKE SURE TO DECLARE THE URL IN BACKQUOTES (``)
-const mongoUrl= `mongodb+srv://${user}:${pass}@cluster0.nb25gco.mongodb.net/f1?retryWrites=true&w=majority` ;  //This'll link it to my MongoDB server
+const mongoUrl= `mongodb+srv://${user}:${pass}@cluster0.nb25gco.mongodb.net/f1_a?retryWrites=true&w=majority` ;  //This'll link it to my MongoDB server
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Definition of a schema
 const teamSchema = new mongoose.Schema({
   id: Number,
-  name: String,
-  nationality: String,
+  code: String,
+  label: String,
+  country: String,
   url: String,
 });
 teamSchema.set("strictQuery", true);
@@ -59,23 +60,37 @@ let countries = [
 ];
 
 let teamsRaw=[
-    {code: "mercedes", label: "Mercedes", country: "GER"},
-    {code: "aston_martin", label: "Aston Martin", country: "ENG"},
+  {code: "mercedes", label: "Mercedes", country: "GER"},
+  {code: "aston_martin", label: "Aston Martin", country: "ENG"},
+  {code: "alpine", label: "Alpine", country: "FRA"},
+  {code: "hass_f1", label: "Hass F1 Team", country: "USA"},
 ];
+
+let teams = []; //this'll apply the cache to the "if".
+let drivers = [];
 
 //   add the async after declaring the "await" in the query of the database
 app.use("/", async (req,res,next)=>{
-    if(teams.lenght === 0){
+    if(teams.length === 0){
         //load info from DB:
         var teamsDB = await Team.find({}).exec(); //query the database
-        if(!Array.isArray(teamsDB) || teamsDB.lenght === 0){ //If it is NOT (!) an array and it's empty
+        if(!Array.isArray(teamsDB) || teamsDB.length === 0){ //If it is NOT (!) an array and it's empty
             //I have an empty array, I need to populate:
             await Team.insertMany(teamsRaw).then(()=>{
                 console.log("Teams loaded")
             }).catch((error)=>{
                 console.error(error);
             });
-            // TO DO: load again records from the DB
+          // TO DO: load again records from the DB
+          await Team.find({})
+          .then((docs)=>{
+            console.log("Found the following teams");
+            console.log(docs);
+            teams = docs;
+          })
+          .catch((error)=>{
+            console.error(error);
+          });
         }else{
             teams = teamsDB;
         }
@@ -85,7 +100,37 @@ app.use("/", async (req,res,next)=>{
 
 app.get("/", (req, res) => {
   //res.sendFile(__dirname + "/public/html/index.html");
-  res.render("index",{countries,teams});
+  res.render("index",{countries,teams,drivers});
+});
+
+app.post("/driver", async (req, res) => {
+  //GEt the information from the form.
+  var team = await Team.findOne({code:{$eq: req.body.team}}).exec();
+  var driver = new Driver( {
+    num: req.body.num,
+    code: req.body.code,
+    forename: req.body.name,
+    surname: req.body.lname,
+    dob: req.body.dob,
+    nationality: req.body.nation,
+    url: req.body.url,
+    team: team, 
+  });
+  driver.save();
+  drivers.push(driver);
+  
+  /*
+   await Driver.insertOne(driver)
+  .then(()=>{
+    console.log("Drivers saved");
+    drivers.push(driver);
+  })
+  .catch((error)=>{
+    console.error(error);
+  });
+  res.redirect("/");
+  */
+  res.redirect("/");
 });
 
 app.listen(3000, (err) => {
